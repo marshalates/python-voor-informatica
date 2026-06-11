@@ -1,8 +1,9 @@
+#informatica Po2 Mira and Anzhelika 19/6/2026
 import random
 
 
 def Guess(): 
-    #variables and lists, the names should be pretty clear to what they are
+    #variables and lists, the names should be pretty clear to what they are, written by Anzhelika
     words  = ["informatica", "informatiekunde", "spelletje", "aardigheidje", "scholier" ,"fotografie", "waardebepaling", "specialiteit", "verzekering", "universiteit", "heesterperk"]
     chosenWord = random.choice(words)
 
@@ -13,14 +14,14 @@ def Guess():
     guess = None
 
     # the start text
-    #shows the number of turns and shows the number of letters in the word
+    #shows the number of turns and shows the number of letters in the word, written bij Mira
     print("You have " + str(turns) + " turns left.")
     print("The word contains " + str(len(chosenWord)) + " letters.")
     for letter in chosenWord:
         invisWord.append("_")
     print(''.join(invisWord)) # ''.join(invisWord) just means you print the word without the brackets and comma's
 
-    #will keep looping until you win the game by guessing all the letters or the correct word
+    #will keep looping until you win the game by guessing all the letters or the correct word, written by Anzhelika
     while not win: 
 
         #takes the guess
@@ -44,7 +45,7 @@ def Guess():
                         invisWord.append(letter)
                 print(''.join(invisWord))
 
-            #if the guess is not correct, take away a turn and check if you have turns left
+            #if the guess is not correct, take away a turn and check if you have turns left, written by Mira
             elif not guess in chosenWord and not guess in guessedLetters:
                 guessedLetters.append(guess)
                 turns -= 1
@@ -59,7 +60,7 @@ def Guess():
             elif guess in guessedLetters:
                 print("You have already guessed that!")
 
-        #if a word is guessed, will check if the word is correct
+        #if a word is guessed, will check if the word is correct,  written by Mira
         elif len(guess) > 1 and guess == chosenWord and not guess in guessedLetters:
             win = True
 
@@ -73,7 +74,7 @@ def Guess():
                 exit()
             print("You have " + str(turns) + " turns left.")
 
-        #if the word has been guessed before, makes you guess again
+        #if the word has been guessed before, makes you guess again, written by Anzhelika
         elif guess in guessedLetters:
             print("You have already guessed that word.")
 
