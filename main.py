@@ -1,6 +1,66 @@
 #informatica Po2 Mira and Anzhelika 19/6/2026
 import random
 
+#toon lege galg aan het begin van het spel, written by Anzhelika
+def draw_hangman(turns):
+    stages= [
+         """
+          +---+
+          |   |
+          O   |
+         /|\  |
+         / \  |
+              |
+        =========
+        """,
+                """
+          +---+
+          |   |
+          O   |
+         /|\  |
+         /    |
+              |
+        =========
+        """,
+                """
+          +---+
+          |   |
+          O   |
+         /|\  |
+              |
+              |
+        =========
+        """,
+                """
+          +---+
+          |   |
+          O   |
+         /|   |
+              |
+              |
+        =========
+        """,
+                """
+          +---+
+          |   |
+          O   |
+          |   |
+              |
+              |
+        =========
+        """,
+                """
+          +---+
+          |   |
+              |
+              |
+              |
+              |
+        =========
+        """
+    ]
+    print(stages[turns])
+
 
 def Guess(): 
     #introduction to the game 
@@ -19,6 +79,10 @@ def Guess():
     #shows the number of turns and shows the number of letters in the word, written bij Mira
     print("You have " + str(turns) + " turns left.")
     print("The word contains " + str(len(chosenWord)) + " letters.")
+
+    #toon nieuwe galg
+    draw_hangman(turns)
+    
     for letter in chosenWord:
         invisWord.append("_")
     print(''.join(invisWord)) # ''.join(invisWord) just means you print the word without the brackets and comma's
@@ -52,6 +116,10 @@ def Guess():
                 guessedLetters.append(guess)
                 turns -= 1
                 print("That guess is incorrect.")
+                
+                #nieuwe galg tekenen
+                draw_hangman(turns)
+                
                 if turns == 0: 
                     print("You lost, the word was " + chosenWord + ".")
                     exit()
@@ -71,6 +139,8 @@ def Guess():
             guessedLetters.append(guess)
             print("That was not the correct word.")
             turns -= 1
+            #nieuwe galg tekenen
+            draw_hangman(turns)
             if turns == 0: 
                 print("You lost, the word was " + chosenWord + ".")
                 exit()
