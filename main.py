@@ -3,6 +3,8 @@ import random
 
 
 def Guess(): 
+    #introduction to the game 
+    print("Welcome to the game of Hangman!, guess the word by guessing letters or the full word.")
     #variables and lists, the names should be pretty clear to what they are, written by Anzhelika
     words  = ["informatica", "informatiekunde", "spelletje", "aardigheidje", "scholier" ,"fotografie", "waardebepaling", "specialiteit", "verzekering", "universiteit", "heesterperk"]
     chosenWord = random.choice(words)
@@ -29,7 +31,7 @@ def Guess():
         guess = input("Guess a letter or the full word: ").lower()
         while not len(guess) >= 1 or not guess.isalpha():
             print("That is not a valid guess, try again.")
-            guess = input("Guess a letter or the full word: ")
+            guess = input("Guess a letter or the full word: ").lower()
 
         #if a single letter is guessed, will continue the normal way
         if len(guess) == 1 and not guess in guessedLetters:
