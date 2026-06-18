@@ -1,4 +1,4 @@
-#informatica Po2 Mira and Anzhelika 19/6/2026
+#informatica Po2 Mira and Anzhelika 19/6/2026.
 import random
 
 #toon lege galg aan het begin van het spel, written by Anzhelika
